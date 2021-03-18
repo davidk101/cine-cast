@@ -21,11 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // enure programmatic functionality
         guard let window_scene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(frame: UIScreen.main.bounds)
+        let nav_controller = UINavigationController(rootViewController: ViewController())
+        nav_controller.navigationBar.prefersLargeTitles = true
+        
+        window = UIWindow(frame: window_scene.coordinateSpace.bounds)
         window?.windowScene = window_scene
         
-        let view_controller = ViewController()
-        window?.rootViewController = view_controller
+        window?.rootViewController = nav_controller
         window?.makeKeyAndVisible()
         
     }
