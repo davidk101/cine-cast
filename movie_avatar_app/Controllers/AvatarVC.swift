@@ -16,12 +16,32 @@ class AvatarVC: UIViewController {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
                 
         view.backgroundColor = UIColor(red: 250/255.0, green: 177/255.0, blue: 160/255.0, alpha: 1.0)
+        
+        view.addSubview(imageView)
+        imageConstraints()
 
     }
     
     @objc func popVC(sender: UIBarButtonItem){
         
         navigationController?.popViewController(animated: true)
+    }
+    
+    let imageView: UIImageView = {
+        
+        let image = UIImageView()
+        image.image = UIImage(named: "")
+        return image
+        
+    }() // result of closure into imageView
+    
+    func imageConstraints(){
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 28).isActive = true
     }
     
 }
