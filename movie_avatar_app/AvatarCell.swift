@@ -28,7 +28,14 @@ class AvatarCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         
-        fatalError("whoops")
+        fatalError("init(coder) has no implementation")
+    }
+    
+    func identifyCell(avatar: Avatar){
+        
+        AvatarImageView.image = avatar.image
+        AvatarTitleLabel.text = avatar.label
+        
     }
     
     func configImageView(){

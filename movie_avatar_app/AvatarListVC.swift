@@ -15,7 +15,7 @@ class AvatarListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title  = "Inception"
+        title  = "Inception Character List!"
         avatars = fetch()
         configureTableView()
 
@@ -50,6 +50,10 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell") as! AvatarCell
+        
+        let avatar  = avatars[indexPath.row]
+        
+        cell.identifyCell(avatar: avatar)
         
         return UITableViewCell()
     }
