@@ -13,9 +13,15 @@ class AvatarVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 255/255.0, green: 234/255.0, blue: 167/255.0, alpha: 1.0)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
+                
+        view.backgroundColor = UIColor(red: 250/255.0, green: 177/255.0, blue: 160/255.0, alpha: 1.0)
 
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func popVC(sender: UIBarButtonItem){
+        
+        navigationController?.popViewController(animated: true)
     }
     
 }

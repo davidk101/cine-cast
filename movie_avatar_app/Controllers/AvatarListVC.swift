@@ -21,7 +21,7 @@ class AvatarListVC: UIViewController {
         
         navigationItem.searchController = searchController
         
-        self.tableView.backgroundColor = UIColor(red: 243/255.0, green: 166/255.0, blue: 131/255.0, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor(red: 255/255.0, green: 177/255.0, blue: 160/255.0, alpha: 1.0)
         title  = "Inception"
         avatars = fetch()
         configureTableView()
