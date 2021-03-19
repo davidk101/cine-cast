@@ -8,20 +8,23 @@
 
 import UIKit
 
-class AvatarVC: UIViewController, DataDelegate {
+class AvatarVC: UIViewController{
     
-    func printHere(string: String) {
-        
-        print(string)
-    }
+    var network: NetworkCall?
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
+        network?.getData(id: "287", completion: { [weak self] (data: String) in
+             print("step2")
+            self?.useData(data:data)
+        })
                 
-        view.backgroundColor = UIColor(red: 250/255.0, green: 177/255.0, blue: 160/255.0, alpha: 1.0)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
+        
+        self.navigationItem.leftBarButtonItem?.tintColor = .black
+                
+        view.backgroundColor = UIColor(red: 104/255.0, green: 155/255.0, blue: 208/255.0, alpha: 1.0)
         
         view.addSubview(imageView)
         imageConstraints()
@@ -29,6 +32,11 @@ class AvatarVC: UIViewController, DataDelegate {
         view.addSubview(label)
         labelConstraints()
 
+    }
+    
+    func useData(data: String){
+        print("hello world")
+        print(data)
     }
     
     @objc func popVC(sender: UIBarButtonItem){
@@ -78,11 +86,5 @@ class AvatarVC: UIViewController, DataDelegate {
         imageView.layer.cornerRadius = 15
         
     }
-    
-}
-
-protocol DataDelegate{
-    
-    func printHere(string: String)
     
 }

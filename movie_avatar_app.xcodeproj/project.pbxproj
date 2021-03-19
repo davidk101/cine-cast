@@ -73,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				981CCFBE2603EEDC002B8A25 /* Models */,
-				983B7A6F2605172F001E55EA /* Views */,
 				981CCFCD2604433C002B8A25 /* Controllers */,
 				981CCFC62603FC02002B8A25 /* Extensions */,
 				981CCFC12603F75C002B8A25 /* Services */,
@@ -100,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				981CCFBF2603EEF8002B8A25 /* Avatar.swift */,
+				981CCFC92603FF25002B8A25 /* AvatarCell.swift */,
 				983B7A7126052583001E55EA /* APIResponse.swift */,
 			);
 			path = Models;
@@ -129,14 +129,6 @@
 				981CCFCE26044363002B8A25 /* AvatarVC.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		983B7A6F2605172F001E55EA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				981CCFC92603FF25002B8A25 /* AvatarCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		983B7A7026051756001E55EA /* Resources */ = {

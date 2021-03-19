@@ -25,11 +25,11 @@ class NetworkCall{
     // 'lazy' needed as one var initialzied with another i.e. initial value not calcualted until use
     //lazy var url = "https://api.themoviedb.org/3/person/" + id + "?api_key=" + key.apiKey + "&language=en-US"
     
-    private func getData(id: String ){
+    func getData(id: String, completion: @escaping ((_ data: String) -> Void) ){
         
-        var updated_url = "https://api.themoviedb.org/3/person/" + id + "?api_key=" + key.apiKey + "&language=en-US"
+        let updated_url = "https://api.themoviedb.org/3/person/" + id + "?api_key=" + key.apiKey + "&language=en-US"
         
-        URLSession.shared.dataTask(with: URL(string: updated_url)!, completionHandler: { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: URL(string: updated_url)!, completionHandler: { (data, response, error) in
             
             guard let data = data, error == nil else {
                 
@@ -39,23 +39,27 @@ class NetworkCall{
             var result: APIResponse?
             do{
                 
-                result = try? JSONDecoder().decode(APIResponse.self, from: data)
+                 result = try JSONDecoder().decode(APIResponse.self, from: data)
             }
             catch{
-                return 
                 
+                return 
             }
             
             guard let json = result else{
                 
                 return
             }
+            print("step1")
+            completion(json.biography)
             
-            print(json)
             
+            })
             
-        })
+            task.resume()
     }
     
 }
+
+
 
