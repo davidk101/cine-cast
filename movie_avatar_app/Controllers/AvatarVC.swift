@@ -10,28 +10,43 @@ import UIKit
 
 class AvatarVC: UIViewController{
     
-    var network: NetworkCall?
+    var network = NetworkCall()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        network?.getData(id: "287", completion: { [weak self] (data: String) in
-             print("step2")
-            self?.useData(data:data)
-        })
+        //network?.getData(id: "287", completion: { [weak self] (data: String) in
+             //print("step2")
+            //self?.useData(data:data)
+        //})
+        
+        network.getData1(id: "227")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecevied(notification:)), name: NSNotification.Name(rawValue: "newDataToLoad"), object: nil)
                 
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
         
         self.navigationItem.leftBarButtonItem?.tintColor = .black
                 
-        view.backgroundColor = UIColor(red: 104/255.0, green: 155/255.0, blue: 208/255.0, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 193/255.0, green: 225/255.0, blue: 236/255.0, alpha: 1.0)
         
         view.addSubview(imageView)
         imageConstraints()
         
         view.addSubview(label)
         labelConstraints()
-
+        
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "newDataToLoad"), object: nil)
+    }
+    
+    @objc func notificationRecevied(notification: Notification) {
+        let data = notification.object
+        print(data as Any)
     }
     
     func useData(data: String){
@@ -63,10 +78,6 @@ class AvatarVC: UIViewController{
     func labelConstraints(){
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        //label.topAnchor.constraint(equalTo: label.topAnchor, constant: 190).isActive = true
-        //label.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 12).isActive = true
-        //label.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 12).isActive = true
-                
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true

@@ -20,7 +20,6 @@
 		981CCFCC2604284F002B8A25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCB2604284F002B8A25 /* Constants.swift */; };
 		981CCFCF26044363002B8A25 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCE26044363002B8A25 /* AvatarVC.swift */; };
 		983B7A7226052583001E55EA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B7A7126052583001E55EA /* APIResponse.swift */; };
-		983B7A7426052FFA001E55EA /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B7A7326052FFA001E55EA /* Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		981CCFCB2604284F002B8A25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		981CCFCE26044363002B8A25 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		983B7A7126052583001E55EA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		983B7A7326052FFA001E55EA /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				981CCFC22603F775002B8A25 /* NetworkCall.swift */,
-				983B7A7326052FFA001E55EA /* Delegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983B7A7426052FFA001E55EA /* Delegate.swift in Sources */,
 				981CCFBD2603EB65002B8A25 /* Key.swift in Sources */,
 				981CCFC32603F775002B8A25 /* NetworkCall.swift in Sources */,
 				981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */,
