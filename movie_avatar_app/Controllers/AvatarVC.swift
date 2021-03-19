@@ -55,12 +55,15 @@ class AvatarVC: UIViewController, DataDelegate {
     func labelConstraints(){
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: label.topAnchor, constant: 190).isActive = true
-        label.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 12).isActive = true
-        label.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 12).isActive = true
+        //label.topAnchor.constraint(equalTo: label.topAnchor, constant: 190).isActive = true
+        //label.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 12).isActive = true
+        //label.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 12).isActive = true
+                
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
-        label.widthAnchor.constraint(equalToConstant: 180).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        label.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 300).isActive = true
     }
     
     func imageConstraints(){
