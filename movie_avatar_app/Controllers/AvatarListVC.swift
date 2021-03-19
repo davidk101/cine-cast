@@ -65,20 +65,22 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell") as! AvatarCell
-        
         let avatar  = filteredAvatars[indexPath.row]
-        
-        cell.identifyCell(avatar: avatar)
-        
+
+        cell.setCell(avatar: avatar)
         cell.backgroundColor = UIColor.clear
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+                
         let destination = AvatarVC()
         navigationController?.pushViewController(destination, animated: true)
+        
+        destination.label.text = filteredAvatars[indexPath.row].label
+        destination.imageView.image = filteredAvatars[indexPath.row].image
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -118,15 +120,12 @@ extension AvatarListVC: UISearchBarDelegate{
         else{
             
             for avatar in avatars{
-                
                 if avatar.label.lowercased().contains(searchText.lowercased()){
-                    
                     filteredAvatars.append(avatar)
                 }
             }
         }
 
-        
         self.tableView.reloadData()
     }
     

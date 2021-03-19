@@ -33,7 +33,6 @@ class AvatarVC: UIViewController {
     let imageView: UIImageView = {
         
         let image = UIImageView()
-        image.image = UIImage(named: "phillipa")
         return image
         
     }() // the result of closure goes into the imageView
@@ -42,7 +41,6 @@ class AvatarVC: UIViewController {
         
         let label = UILabel()
         label.numberOfLines = 0 // word-wrap
-        label.text = "hello world!"
         label.backgroundColor = .cyan
         return label
         
@@ -51,11 +49,12 @@ class AvatarVC: UIViewController {
     func labelConstraints(){
         
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.topAnchor.constraint(equalTo: label.topAnchor).isActive = true
-        label.bottomAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
-        label.leadingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: label.topAnchor, constant: 190).isActive = true
+        label.bottomAnchor.constraint(equalTo: label.bottomAnchor, constant: 12).isActive = true
+        label.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 12).isActive = true
         label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
-        
+        label.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 180).isActive = true
     }
     
     func imageConstraints(){
@@ -65,6 +64,10 @@ class AvatarVC: UIViewController {
         imageView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -250).isActive = true
+        
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 15
+        
     }
     
 }

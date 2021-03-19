@@ -33,7 +33,7 @@ class AvatarCell: UITableViewCell {
         fatalError("init(coder) has no implementation")
     }
     
-    func identifyCell(avatar: Avatar){
+    func setCell(avatar: Avatar){
         
         AvatarImageView.image = avatar.image
         AvatarTitleLabel.text = avatar.label
