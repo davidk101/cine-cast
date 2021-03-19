@@ -18,6 +18,7 @@
 		981CCFC82603FC23002B8A25 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC72603FC23002B8A25 /* ViewExtension.swift */; };
 		981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC92603FF25002B8A25 /* AvatarCell.swift */; };
 		981CCFCC2604284F002B8A25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCB2604284F002B8A25 /* Constants.swift */; };
+		981CCFCF26044363002B8A25 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCE26044363002B8A25 /* AvatarVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		981CCFC72603FC23002B8A25 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		981CCFC92603FF25002B8A25 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		981CCFCB2604284F002B8A25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		981CCFCE26044363002B8A25 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,7 @@
 		981CCFA62603E6E5002B8A25 /* movie_avatar_app */ = {
 			isa = PBXGroup;
 			children = (
-				981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */,
+				981CCFCD2604433C002B8A25 /* Controllers */,
 				981CCFC92603FF25002B8A25 /* AvatarCell.swift */,
 				981CCFBE2603EEDC002B8A25 /* Models */,
 				981CCFC62603FC02002B8A25 /* Extensions */,
@@ -112,6 +114,15 @@
 				981CCFCB2604284F002B8A25 /* Constants.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		981CCFCD2604433C002B8A25 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */,
+				981CCFCE26044363002B8A25 /* AvatarVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 				981CCFBD2603EB65002B8A25 /* Key.swift in Sources */,
 				981CCFC32603F775002B8A25 /* Network.swift in Sources */,
 				981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */,
+				981CCFCF26044363002B8A25 /* AvatarVC.swift in Sources */,
 				981CCFC82603FC23002B8A25 /* ViewExtension.swift in Sources */,
 				981CCFA82603E6E5002B8A25 /* AppDelegate.swift in Sources */,
 				981CCFC02603EEF8002B8A25 /* Avatar.swift in Sources */,

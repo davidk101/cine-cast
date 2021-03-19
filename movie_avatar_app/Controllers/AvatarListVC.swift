@@ -16,7 +16,7 @@ class AvatarListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.backgroundColor = UIColor(red: 243/255.0, green: 166/255.0, blue: 131/255.0, alpha: 1.0)
-        title  = "'Inception' Characters!"
+        title  = "'Inception' Characters"
         avatars = fetch()
         configureTableView()
 
@@ -59,6 +59,13 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         cell.backgroundColor = UIColor.clear
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let destination = AvatarVC()
+        navigationController?.pushViewController(destination, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 
