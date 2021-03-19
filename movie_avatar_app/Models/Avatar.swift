@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
-struct Avatar: Codable{
+struct Avatar{
     
-    
+    var image: UIImage
+    var label: String 
 }

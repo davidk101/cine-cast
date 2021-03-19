@@ -17,6 +17,7 @@
 		981CCFC52603F9DF002B8A25 /* AvatarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */; };
 		981CCFC82603FC23002B8A25 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC72603FC23002B8A25 /* ViewExtension.swift */; };
 		981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC92603FF25002B8A25 /* AvatarCell.swift */; };
+		981CCFCC2604284F002B8A25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCB2604284F002B8A25 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarListVC.swift; sourceTree = "<group>"; };
 		981CCFC72603FC23002B8A25 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		981CCFC92603FF25002B8A25 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		981CCFCB2604284F002B8A25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				981CCFC72603FC23002B8A25 /* ViewExtension.swift */,
+				981CCFCB2604284F002B8A25 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				981CCFC02603EEF8002B8A25 /* Avatar.swift in Sources */,
 				981CCFAA2603E6E5002B8A25 /* SceneDelegate.swift in Sources */,
 				981CCFC52603F9DF002B8A25 /* AvatarListVC.swift in Sources */,
+				981CCFCC2604284F002B8A25 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

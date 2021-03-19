@@ -54,3 +54,18 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
     
     
 }
+
+extension AvatarListVC{
+    
+    func fetch() -> [Avatar]{
+        
+        let img1  = Avatar(image: Images.ariadne, label:"" )
+        let img2  = Avatar(image: Images.arthur, label:"" )
+        let img3  = Avatar(image: Images.eames, label:"" )
+        let img4  = Avatar(image: Images.fischer, label:"" )
+        let img5  = Avatar(image: Images.mal, label:"" )
+        let img6  = Avatar(image: Images.saito, label:"" )
+        
+        return [img1, img2, img3, img4, img5, img6]
+    }
+}

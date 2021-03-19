@@ -28,7 +28,7 @@ class AvatarCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         
-        
+        fatalError("whoops")
     }
     
     func configImageView(){
