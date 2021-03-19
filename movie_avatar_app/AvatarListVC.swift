@@ -15,7 +15,7 @@ class AvatarListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title  = "Inception Character List!"
+        title  = "'Inception' Characters!"
         avatars = fetch()
         configureTableView()
 
@@ -55,10 +55,8 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         
         cell.identifyCell(avatar: avatar)
         
-        return UITableViewCell()
+        return cell
     }
-    
-    
     
 }
 
@@ -66,13 +64,18 @@ extension AvatarListVC{
     
     func fetch() -> [Avatar]{
         
-        let img1  = Avatar(image: Images.ariadne, label:"" )
-        let img2  = Avatar(image: Images.arthur, label:"" )
-        let img3  = Avatar(image: Images.eames, label:"" )
-        let img4  = Avatar(image: Images.fischer, label:"" )
-        let img5  = Avatar(image: Images.mal, label:"" )
-        let img6  = Avatar(image: Images.saito, label:"" )
+        let img1  = Avatar(image: Images.ariadne, label:"Ariadne" )
+        let img2  = Avatar(image: Images.arthur, label:"Arthur" )
+        let img3  = Avatar(image: Images.eames, label:"Eames" )
+        let img4  = Avatar(image: Images.fischer, label:"Fischer" )
+        let img5  = Avatar(image: Images.mal, label:"Mal" )
+        let img6  = Avatar(image: Images.saito, label:"Saito" )
+        let img7  = Avatar(image: Images.miles, label:"Prof. Stephen Miles" )
+        let img8  = Avatar(image: Images.maurice, label:"Maurice Fisher" )
+        let img9  = Avatar(image: Images.browning, label:"Browning" )
+        let img10  = Avatar(image: Images.phillipa, label:"Phillipa" )
+        let img11  = Avatar(image: Images.thin_man, label:"Thin Man" )
         
-        return [img1, img2, img3, img4, img5, img6]
+        return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11]
     }
 }

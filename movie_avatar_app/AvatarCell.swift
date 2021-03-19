@@ -23,6 +23,8 @@ class AvatarCell: UITableViewCell {
         
         configImageView()
         configTitleLabel()
+        setImageConstraints()
+        setTitleConstraints()
         
     }
     
@@ -49,6 +51,7 @@ class AvatarCell: UITableViewCell {
         
         AvatarTitleLabel.numberOfLines = 0 // word wrap
         AvatarTitleLabel.adjustsFontSizeToFitWidth = true
+        AvatarTitleLabel.font = UIFont(name: "Avenir", size: 25)
         
     }
     
@@ -58,7 +61,7 @@ class AvatarCell: UITableViewCell {
         AvatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         AvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant : 12).isActive = true
         AvatarImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        AvatarImageView.widthAnchor.constraint(equalTo: AvatarImageView.heightAnchor, multiplier: 16/9).isActive = true
+        AvatarImageView.widthAnchor.constraint(equalTo: AvatarImageView.heightAnchor, multiplier: 1.1).isActive = true
         
     }
     
@@ -66,7 +69,7 @@ class AvatarCell: UITableViewCell {
         
         AvatarTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         AvatarTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        AvatarTitleLabel.leadingAnchor.constraint(equalTo: AvatarImageView.trailingAnchor, constant: 20).isActive = true
+        AvatarTitleLabel.leadingAnchor.constraint(equalTo: AvatarImageView.trailingAnchor, constant: 50).isActive = true
         AvatarTitleLabel.heightAnchor.constraint(equalToConstant: 80).isActive = true
         AvatarTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
         

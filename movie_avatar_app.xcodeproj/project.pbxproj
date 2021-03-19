@@ -68,9 +68,9 @@
 			children = (
 				981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */,
 				981CCFC92603FF25002B8A25 /* AvatarCell.swift */,
+				981CCFBE2603EEDC002B8A25 /* Models */,
 				981CCFC62603FC02002B8A25 /* Extensions */,
 				981CCFC12603F75C002B8A25 /* Services */,
-				981CCFBE2603EEDC002B8A25 /* Models */,
 				981CCFBB2603EB53002B8A25 /* Secrets */,
 				981CCFA72603E6E5002B8A25 /* AppDelegate.swift */,
 				981CCFA92603E6E5002B8A25 /* SceneDelegate.swift */,

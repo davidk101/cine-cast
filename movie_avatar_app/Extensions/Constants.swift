@@ -17,4 +17,9 @@ struct Images{
     static let fischer = UIImage(named: "fischer")!
     static let mal = UIImage(named: "mal")!
     static let saito = UIImage(named: "saito")!
+    static let thin_man = UIImage(named: "thin_man")!
+    static let phillipa = UIImage(named: "phillipa")!
+    static let browning = UIImage(named: "browning")!
+    static let maurice = UIImage(named: "maurice")!
+    static let miles = UIImage(named: "miles")!
 }
