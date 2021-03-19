@@ -19,16 +19,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // remove storyboard
-        guard let window_scene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // navController. root -> AvatarListVC()
-        let nav_controller = UINavigationController(rootViewController: AvatarListVC())
-        nav_controller.navigationBar.prefersLargeTitles = true
+        let navController = UINavigationController(rootViewController: AvatarListVC())
+        navController.navigationBar.prefersLargeTitles = true
         
-        window = UIWindow(frame: window_scene.coordinateSpace.bounds)
-        window?.windowScene = window_scene
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
         
-        window?.rootViewController = nav_controller
+        window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
     }

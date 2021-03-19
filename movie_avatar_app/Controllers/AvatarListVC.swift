@@ -10,15 +10,23 @@ import UIKit
 
 class AvatarListVC: UIViewController {
     
+    let data = ["Ariadna","Arthur","Eames","Fischer","Mal","Saito","Prof. Stephen Miles", "Maurice Fisher","Phillipa","Brown","Thin Man"]
+    
     var tableView = UITableView()
     var avatars : [Avatar] = []
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        navigationItem.searchController = searchController
+        
         self.tableView.backgroundColor = UIColor(red: 243/255.0, green: 166/255.0, blue: 131/255.0, alpha: 1.0)
-        title  = "'Inception' Characters"
+        title  = "Inception"
         avatars = fetch()
         configureTableView()
+        configureSearchBar()
 
     }
     
@@ -38,6 +46,11 @@ class AvatarListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    func configureSearchBar(){
+        
+        searchController.searchBar.delegate = self
     }
 
 }
@@ -68,7 +81,6 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-
 }
 
 extension AvatarListVC{
@@ -89,4 +101,13 @@ extension AvatarListVC{
         
         return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11]
     }
+}
+
+extension AvatarListVC: UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print(searchText)
+    }
+    
 }
