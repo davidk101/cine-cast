@@ -10,10 +10,9 @@ import UIKit
 
 class AvatarListVC: UIViewController {
     
-    let data = ["Ariadna","Arthur","Eames","Fischer","Mal","Saito","Prof. Stephen Miles", "Maurice Fisher","Phillipa","Brown","Thin Man"]
-    
     var tableView = UITableView()
     var avatars : [Avatar] = []
+    var filteredAvatars: [Avatar] = []
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -35,7 +34,7 @@ class AvatarListVC: UIViewController {
         view.addSubview(tableView)
         
         setTableViewDelegates()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 150
         tableView.register(AvatarCell.self, forCellReuseIdentifier: "AvatarCell")
         tableView.pin(to: view)
     }
@@ -51,6 +50,8 @@ class AvatarListVC: UIViewController {
     func configureSearchBar(){
         
         searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false  // select cell during search 
+        filteredAvatars = avatars
     }
 
 }
@@ -58,14 +59,14 @@ class AvatarListVC: UIViewController {
 extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return avatars.count
+        return filteredAvatars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell") as! AvatarCell
         
-        let avatar  = avatars[indexPath.row]
+        let avatar  = filteredAvatars[indexPath.row]
         
         cell.identifyCell(avatar: avatar)
         
@@ -107,7 +108,38 @@ extension AvatarListVC: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        print(searchText)
+        filteredAvatars = []
+        
+        if searchText == ""{
+            
+            filteredAvatars = avatars
+        }
+        
+        else{
+            
+            for avatar in avatars{
+                
+                if avatar.label.lowercased().contains(searchText.lowercased()){
+                    
+                    filteredAvatars.append(avatar)
+                }
+            }
+        }
+
+        
+        self.tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        filteredAvatars = []
+        filteredAvatars = avatars
+        self.tableView.reloadData()
+                
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) { // persist text
+        
     }
     
 }

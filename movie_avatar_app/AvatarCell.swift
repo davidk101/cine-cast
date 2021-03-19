@@ -60,7 +60,7 @@ class AvatarCell: UITableViewCell {
         AvatarImageView.translatesAutoresizingMaskIntoConstraints = false
         AvatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         AvatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant : 12).isActive = true
-        AvatarImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        AvatarImageView.heightAnchor.constraint(equalToConstant: 110).isActive = true
         AvatarImageView.widthAnchor.constraint(equalTo: AvatarImageView.heightAnchor, multiplier: 1.1).isActive = true
         
     }
