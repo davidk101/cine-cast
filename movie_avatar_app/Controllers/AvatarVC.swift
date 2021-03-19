@@ -19,6 +19,9 @@ class AvatarVC: UIViewController {
         
         view.addSubview(imageView)
         imageConstraints()
+        
+        view.addSubview(label)
+        labelConstraints()
 
     }
     
@@ -33,7 +36,27 @@ class AvatarVC: UIViewController {
         image.image = UIImage(named: "phillipa")
         return image
         
-    }() // result of closure into imageView
+    }() // the result of closure goes into the imageView
+    
+    let label : UILabel = {
+        
+        let label = UILabel()
+        label.numberOfLines = 0 // word-wrap
+        label.text = "hello world!"
+        label.backgroundColor = .cyan
+        return label
+        
+    }()
+    
+    func labelConstraints(){
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: label.topAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: label.leadingAnchor).isActive = true
+        label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
+        
+    }
     
     func imageConstraints(){
         
