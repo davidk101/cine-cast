@@ -9,7 +9,7 @@
 import UIKit
 
 class AvatarListVC: UIViewController {
-    
+        
     var tableView = UITableView()
     var avatars : [Avatar] = []
     var filteredAvatars: [Avatar] = []

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct APIResponse: Codable{
+/*struct APIResponse: Codable{
     
     let biography: String
     let birthday: String
@@ -16,3 +16,4 @@ struct APIResponse: Codable{
     let place_of_birth: String
     
 }
+*/

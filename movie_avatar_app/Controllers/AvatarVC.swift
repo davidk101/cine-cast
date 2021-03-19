@@ -8,7 +8,13 @@
 
 import UIKit
 
-class AvatarVC: UIViewController {
+class AvatarVC: UIViewController, DataDelegate {
+    
+    func printHere(string: String) {
+        
+        print(string)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +71,15 @@ class AvatarVC: UIViewController {
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -250).isActive = true
         
-        imageView.layer.masksToBounds = true
+        imageView.layer.masksToBounds = true // sublayer clipped to layer's bounds
         imageView.layer.cornerRadius = 15
         
     }
+    
+}
+
+protocol DataDelegate{
+    
+    func printHere(string: String)
     
 }

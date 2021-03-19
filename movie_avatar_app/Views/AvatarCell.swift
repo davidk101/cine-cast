@@ -76,3 +76,4 @@ class AvatarCell: UITableViewCell {
         
     }
 }
+

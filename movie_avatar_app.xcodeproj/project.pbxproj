@@ -13,13 +13,14 @@
 		981CCFB42603E6E8002B8A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 981CCFB22603E6E8002B8A25 /* LaunchScreen.storyboard */; };
 		981CCFBD2603EB65002B8A25 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFBC2603EB65002B8A25 /* Key.swift */; };
 		981CCFC02603EEF8002B8A25 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFBF2603EEF8002B8A25 /* Avatar.swift */; };
-		981CCFC32603F775002B8A25 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC22603F775002B8A25 /* Network.swift */; };
+		981CCFC32603F775002B8A25 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC22603F775002B8A25 /* NetworkCall.swift */; };
 		981CCFC52603F9DF002B8A25 /* AvatarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */; };
 		981CCFC82603FC23002B8A25 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC72603FC23002B8A25 /* ViewExtension.swift */; };
 		981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFC92603FF25002B8A25 /* AvatarCell.swift */; };
 		981CCFCC2604284F002B8A25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCB2604284F002B8A25 /* Constants.swift */; };
 		981CCFCF26044363002B8A25 /* AvatarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CCFCE26044363002B8A25 /* AvatarVC.swift */; };
 		983B7A7226052583001E55EA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B7A7126052583001E55EA /* APIResponse.swift */; };
+		983B7A7426052FFA001E55EA /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983B7A7326052FFA001E55EA /* Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +32,14 @@
 		981CCFB52603E6E8002B8A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		981CCFBC2603EB65002B8A25 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		981CCFBF2603EEF8002B8A25 /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
-		981CCFC22603F775002B8A25 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		981CCFC22603F775002B8A25 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		981CCFC42603F9DF002B8A25 /* AvatarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarListVC.swift; sourceTree = "<group>"; };
 		981CCFC72603FC23002B8A25 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		981CCFC92603FF25002B8A25 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		981CCFCB2604284F002B8A25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		981CCFCE26044363002B8A25 /* AvatarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarVC.swift; sourceTree = "<group>"; };
 		983B7A7126052583001E55EA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		983B7A7326052FFA001E55EA /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +108,8 @@
 		981CCFC12603F75C002B8A25 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				981CCFC22603F775002B8A25 /* Network.swift */,
+				981CCFC22603F775002B8A25 /* NetworkCall.swift */,
+				983B7A7326052FFA001E55EA /* Delegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -214,8 +217,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983B7A7426052FFA001E55EA /* Delegate.swift in Sources */,
 				981CCFBD2603EB65002B8A25 /* Key.swift in Sources */,
-				981CCFC32603F775002B8A25 /* Network.swift in Sources */,
+				981CCFC32603F775002B8A25 /* NetworkCall.swift in Sources */,
 				981CCFCA2603FF25002B8A25 /* AvatarCell.swift in Sources */,
 				981CCFCF26044363002B8A25 /* AvatarVC.swift in Sources */,
 				981CCFC82603FC23002B8A25 /* ViewExtension.swift in Sources */,
