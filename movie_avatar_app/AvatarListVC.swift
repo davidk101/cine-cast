@@ -11,10 +11,12 @@ import UIKit
 class AvatarListVC: UIViewController {
     
     var tableView = UITableView()
+    var avatars : [Avatar] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title  = "Inception"
+        avatars = fetch()
         configureTableView()
 
     }
@@ -24,9 +26,8 @@ class AvatarListVC: UIViewController {
         view.addSubview(tableView)
         
         setTableViewDelegates()
-        
         tableView.rowHeight = 100
-        
+        tableView.register(AvatarCell.self, forCellReuseIdentifier: "AvatarCell")
         tableView.pin(to: view)
     }
     
@@ -43,10 +44,12 @@ class AvatarListVC: UIViewController {
 extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return avatars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AvatarCell") as! AvatarCell
         
         return UITableViewCell()
     }
