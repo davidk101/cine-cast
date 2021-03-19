@@ -30,7 +30,7 @@ class AvatarVC: UIViewController {
     let imageView: UIImageView = {
         
         let image = UIImageView()
-        image.image = UIImage(named: "")
+        image.image = UIImage(named: "phillipa")
         return image
         
     }() // result of closure into imageView
@@ -41,7 +41,7 @@ class AvatarVC: UIViewController {
         imageView.widthAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 28).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -250).isActive = true
     }
     
 }
