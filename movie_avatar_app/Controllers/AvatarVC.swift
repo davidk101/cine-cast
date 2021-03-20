@@ -32,8 +32,7 @@ class AvatarVC: UIViewController{
         imageConstraints()
         
         view.addSubview(label)
-        labelConstraints()
-        
+
     }
     
     @objc func notificationReceivedFromAPI(notification: Notification) {
@@ -42,13 +41,18 @@ class AvatarVC: UIViewController{
         
         print(data)
         
-        label.text = data
+        DispatchQueue.main.async {
+            
+            self.setLabelText(text: data)// UI changes only on main thread 
+        }
+       
         
     }
     
     @objc func notificationReceivedFromVC(notification: Notification) {
         let data = notification.object
         print(data as Any)
+        
     }
 
     @objc func popVC(sender: UIBarButtonItem){
@@ -66,7 +70,7 @@ class AvatarVC: UIViewController{
     let label : UILabel = {
         
         //let label = UILabel()
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: CGFloat.greatestFiniteMagnitude))
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0 // word-wrap
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.backgroundColor = .cyan
@@ -76,14 +80,10 @@ class AvatarVC: UIViewController{
         
     }()
     
-    func labelConstraints(){
-        /*
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
-        label.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 300).isActive = true*/
+    func setLabelText(text: String){
+        
+        label.text = text
+        
     }
     
     func imageConstraints(){

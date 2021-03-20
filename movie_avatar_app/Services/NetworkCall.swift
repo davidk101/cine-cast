@@ -50,7 +50,7 @@ class NetworkCall{
                 return
             }
                         
-            self.output = "Birthday: " + json.birthday + "\nIMDB ID: " + json.imdb_id + "\nPlace of Birth: " + json.place_of_birth
+            self.output = "IMDB ID: " + json.imdb_id + "\nBirthday: " + json.birthday + "\nPlace of Birth: " + json.place_of_birth
                             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromAPI"), object: self.output)
                         
