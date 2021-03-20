@@ -50,15 +50,13 @@ class NetworkCall{
                 return
             }
                         
-            self.output = "IMDB ID: " + json.imdb_id + "\nBirthday: " + json.birthday + "\nPlace of Birth: " + json.place_of_birth
+            self.output = "IMDB ID: " + json.imdb_id + "\nDate of Birth: " + json.birthday + "\nPlace of Birth: " + json.place_of_birth
                             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromAPI"), object: self.output)
                         
         })
                
         task.resume()
-        
-        
         
     }
 }

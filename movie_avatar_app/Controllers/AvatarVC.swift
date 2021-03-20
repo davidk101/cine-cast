@@ -16,17 +16,16 @@ class AvatarVC: UIViewController{
     
     let listVC = AvatarListVC()
     
+    var rowNumber: Int = 0 // must init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         avatars = listVC.fetch()
-        let rowNumber = listVC.currentRow
-        
+    
         print(rowNumber)
         
         network.getData(id: avatars[rowNumber].id)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceivedFromVC(notification:)), name: NSNotification.Name(rawValue: "fromVC"), object: nil)
                 
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceivedFromAPI(notification:)), name: NSNotification.Name(rawValue: "fromAPI"), object: nil)
         
@@ -46,22 +45,12 @@ class AvatarVC: UIViewController{
     }
     
     @objc func notificationReceivedFromAPI(notification: Notification) {
-        
         let data = notification.object as! String
-        
-        print(data)
-        
+
         DispatchQueue.main.async {
-            
             self.setLabelText(text: data)// UI changes only on main thread
         }
        
-    }
-    
-    @objc func notificationReceivedFromVC(notification: Notification) {
-        let data = notification.object
-        print(data as Any)
-        
     }
 
     @objc func popVC(sender: UIBarButtonItem){

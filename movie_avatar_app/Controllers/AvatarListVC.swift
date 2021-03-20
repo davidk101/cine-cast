@@ -88,11 +88,11 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         
         destination.label.text = filteredAvatars[indexPath.row].label
         destination.imageView.image = filteredAvatars[indexPath.row].image
-        
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromVC"), object: indexPath.row)
+        destination.rowNumber = indexPath.row
+ 
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        setRowNumber(row: indexPath.row)
+                
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromVC"), object: indexPath.row)
         
     }
 }
@@ -115,11 +115,6 @@ extension AvatarListVC{
         let img12  = Avatar(image: Images.cobb, label:"Dom Cobb", id: "6193"   )
 
         return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11, img12]
-    }
-    
-    func setRowNumber(row: Int){ 
-        
-        currentRow = row
     }
     
 }
@@ -154,7 +149,7 @@ extension AvatarListVC: UISearchBarDelegate{
                 
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) { // persist text
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) { // persist text in search bar 
         
     }
     

@@ -13,7 +13,6 @@ extension UIView{
     
     func pin(to view: UIView){
         
-        // pin to edges - constraints
         translatesAutoresizingMaskIntoConstraints = false
         topAnchor.constraint(equalTo: view.topAnchor).isActive  = true
         leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
