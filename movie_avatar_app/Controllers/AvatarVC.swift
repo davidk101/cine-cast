@@ -43,10 +43,9 @@ class AvatarVC: UIViewController{
         
         DispatchQueue.main.async {
             
-            self.setLabelText(text: data)// UI changes only on main thread 
+            self.setLabelText(text: data)// UI changes only on main thread
         }
        
-        
     }
     
     @objc func notificationReceivedFromVC(notification: Notification) {
@@ -69,8 +68,8 @@ class AvatarVC: UIViewController{
     
     let label : UILabel = {
         
-        //let label = UILabel()
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: CGFloat.greatestFiniteMagnitude))
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0 // word-wrap
         label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.backgroundColor = .cyan
@@ -83,7 +82,6 @@ class AvatarVC: UIViewController{
     func setLabelText(text: String){
         
         label.text = text
-        
     }
     
     func imageConstraints(){
