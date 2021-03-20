@@ -110,11 +110,9 @@ extension AvatarListVC{
         let img7  = Avatar(image: Images.miles, label:"Prof. Stephen Miles", id:"3895"    )
         let img8  = Avatar(image: Images.maurice, label:"Maurice Fischer", id: "4935"   )
         let img9  = Avatar(image: Images.browning, label:"Browning", id: "13022"   )
-        let img10  = Avatar(image: Images.phillipa, label:"Phillipa", id: "973135"   )
-        let img11  = Avatar(image: Images.thin_man, label:"Thin Man", id: "72864"   )
-        let img12  = Avatar(image: Images.cobb, label:"Dom Cobb", id: "6193"   )
+        let img10  = Avatar(image: Images.cobb, label:"Dom Cobb", id: "6193"   )
 
-        return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11, img12]
+        return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10]
     }
     
 }

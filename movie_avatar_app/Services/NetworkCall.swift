@@ -41,12 +41,10 @@ class NetworkCall{
                 result = try JSONDecoder().decode(APIResponse.self, from: data)
             }
             catch{
-                   
                 return
             }
                 
             guard let json = result else{
-                   
                 return
             }
                         
