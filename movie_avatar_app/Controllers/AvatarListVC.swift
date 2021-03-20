@@ -29,6 +29,13 @@ class AvatarListVC: UIViewController {
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "fromAPI"), object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "fromVC"), object: nil)
+        
+    }
+    
     func configureTableView(){
         
         view.addSubview(tableView)
@@ -81,9 +88,10 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         destination.label.text = filteredAvatars[indexPath.row].label
         destination.imageView.image = filteredAvatars[indexPath.row].image
         
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromVC"), object: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
+
     }
-    
 }
 
 extension AvatarListVC{
@@ -116,7 +124,6 @@ extension AvatarListVC: UISearchBarDelegate{
             
             filteredAvatars = avatars
         }
-        
         else{
             
             for avatar in avatars{

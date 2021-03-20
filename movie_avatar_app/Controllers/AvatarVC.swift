@@ -15,15 +15,13 @@ class AvatarVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //network?.getData(id: "287", completion: { [weak self] (data: String) in
-             //print("step2")
-            //self?.useData(data:data)
-        //})
+        network.getData(id: "287")
         
-        network.getData1(id: "227")
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(notificationRecevied(notification:)), name: NSNotification.Name(rawValue: "newDataToLoad"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceivedFromVC(notification:)), name: NSNotification.Name(rawValue: "fromVC"), object: nil)
                 
+        NotificationCenter.default.addObserver(self, selector: #selector(notificationReceivedFromAPI(notification:)), name: NSNotification.Name(rawValue: "fromAPI"), object: nil)
+        
+
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(popVC(sender:)))
         
         self.navigationItem.leftBarButtonItem?.tintColor = .black
@@ -36,24 +34,23 @@ class AvatarVC: UIViewController{
         view.addSubview(label)
         labelConstraints()
         
+    }
+    
+    @objc func notificationReceivedFromAPI(notification: Notification) {
+        
+        let data = notification.object as! String
+        
+        print(data)
+        
+        label.text = data
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "newDataToLoad"), object: nil)
-    }
-    
-    @objc func notificationRecevied(notification: Notification) {
+    @objc func notificationReceivedFromVC(notification: Notification) {
         let data = notification.object
         print(data as Any)
     }
-    
-    func useData(data: String){
-        print("hello world")
-        print(data)
-    }
-    
+
     @objc func popVC(sender: UIBarButtonItem){
         
         navigationController?.popViewController(animated: true)
@@ -68,21 +65,25 @@ class AvatarVC: UIViewController{
     
     let label : UILabel = {
         
-        let label = UILabel()
+        //let label = UILabel()
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 400, height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0 // word-wrap
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.backgroundColor = .cyan
+        label.textAlignment = .center
+        label.sizeToFit()
         return label
         
     }()
     
     func labelConstraints(){
-        
+        /*
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.trailingAnchor.constraint(equalTo: label.trailingAnchor).isActive = true
         label.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        label.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 300).isActive = true*/
     }
     
     func imageConstraints(){
