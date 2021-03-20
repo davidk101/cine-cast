@@ -22,4 +22,5 @@ struct Images{
     static let browning = UIImage(named: "browning")!
     static let maurice = UIImage(named: "maurice")!
     static let miles = UIImage(named: "miles")!
+    static let cobb = UIImage(named: "cobb")!
 }

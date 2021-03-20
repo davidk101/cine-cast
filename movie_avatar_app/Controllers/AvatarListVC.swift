@@ -14,6 +14,7 @@ class AvatarListVC: UIViewController {
     var avatars : [Avatar] = []
     var filteredAvatars: [Avatar] = []
     let searchController = UISearchController(searchResultsController: nil)
+    var currentRow: Int = 0 // must be init to 0
     
     override func viewDidLoad() {
         
@@ -90,7 +91,9 @@ extension AvatarListVC: UITableViewDelegate, UITableViewDataSource{
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fromVC"), object: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
-
+        
+        setRowNumber(row: indexPath.row)
+        
     }
 }
 
@@ -98,20 +101,27 @@ extension AvatarListVC{
     
     func fetch() -> [Avatar]{
         
-        let img1  = Avatar(image: Images.ariadne, label:"Ariadne" )
-        let img2  = Avatar(image: Images.arthur, label:"Arthur" )
-        let img3  = Avatar(image: Images.eames, label:"Eames" )
-        let img4  = Avatar(image: Images.fischer, label:"Fischer" )
-        let img5  = Avatar(image: Images.mal, label:"Mal" )
-        let img6  = Avatar(image: Images.saito, label:"Saito" )
-        let img7  = Avatar(image: Images.miles, label:"Prof. Stephen Miles" )
-        let img8  = Avatar(image: Images.maurice, label:"Maurice Fisher" )
-        let img9  = Avatar(image: Images.browning, label:"Browning" )
-        let img10  = Avatar(image: Images.phillipa, label:"Phillipa" )
-        let img11  = Avatar(image: Images.thin_man, label:"Thin Man" )
-        
-        return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11]
+        let img1  = Avatar(image: Images.ariadne, label:"Ariadne", id: "27578" )
+        let img2  = Avatar(image: Images.arthur, label:"Arthur", id:"24045"   )
+        let img3  = Avatar(image: Images.eames, label:"Eames", id:"2524"  )
+        let img4  = Avatar(image: Images.fischer, label:"Robert Fischer", id: "2037"   )
+        let img5  = Avatar(image: Images.mal, label:"Mal Cobb", id: "8293"   )
+        let img6  = Avatar(image: Images.saito, label:"Saito", id: "3899"   )
+        let img7  = Avatar(image: Images.miles, label:"Prof. Stephen Miles", id:"3895"    )
+        let img8  = Avatar(image: Images.maurice, label:"Maurice Fischer", id: "4935"   )
+        let img9  = Avatar(image: Images.browning, label:"Browning", id: "13022"   )
+        let img10  = Avatar(image: Images.phillipa, label:"Phillipa", id: "973135"   )
+        let img11  = Avatar(image: Images.thin_man, label:"Thin Man", id: "72864"   )
+        let img12  = Avatar(image: Images.cobb, label:"Dom Cobb", id: "6193"   )
+
+        return [img1, img2, img3, img4, img5, img6,img7,img8, img9,img10,img11, img12]
     }
+    
+    func setRowNumber(row: Int){ 
+        
+        currentRow = row
+    }
+    
 }
 
 extension AvatarListVC: UISearchBarDelegate{

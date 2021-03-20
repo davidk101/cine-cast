@@ -12,5 +12,6 @@ import UIKit
 struct Avatar{
     
     var image: UIImage
-    var label: String 
+    var label: String
+    var id: String
 }

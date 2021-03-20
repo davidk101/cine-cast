@@ -12,10 +12,19 @@ class AvatarVC: UIViewController{
     
     var network = NetworkCall()
     
+    var avatars : [Avatar] = []
+    
+    let listVC = AvatarListVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        network.getData(id: "287")
+        avatars = listVC.fetch()
+        let rowNumber = listVC.currentRow
+        
+        print(rowNumber)
+        
+        network.getData(id: avatars[rowNumber].id)
         
         NotificationCenter.default.addObserver(self, selector: #selector(notificationReceivedFromVC(notification:)), name: NSNotification.Name(rawValue: "fromVC"), object: nil)
                 
@@ -32,6 +41,7 @@ class AvatarVC: UIViewController{
         imageConstraints()
         
         view.addSubview(label)
+        labelConstraints()
 
     }
     
@@ -68,13 +78,11 @@ class AvatarVC: UIViewController{
     
     let label : UILabel = {
         
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: CGFloat.greatestFiniteMagnitude))
-        label.translatesAutoresizingMaskIntoConstraints = false
+        let label = UILabel()
         label.numberOfLines = 0 // word-wrap
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.backgroundColor = .cyan
         label.textAlignment = .center
         label.sizeToFit()
+        
         return label
         
     }()
@@ -90,11 +98,25 @@ class AvatarVC: UIViewController{
         imageView.widthAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 180).isActive = true
         imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -250).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -115).isActive = true 
         
         imageView.layer.masksToBounds = true // sublayer clipped to layer's bounds
         imageView.layer.cornerRadius = 15
         
+    }
+    
+    func labelConstraints(){
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let marginsGuide = view.layoutMarginsGuide
+        
+        NSLayoutConstraint.activate([
+        label.topAnchor.constraint(equalTo: marginsGuide.topAnchor, constant: 375),
+        label.leadingAnchor.constraint(equalTo: marginsGuide.leadingAnchor),
+        label.trailingAnchor.constraint(equalTo: marginsGuide.trailingAnchor)
+        ])
+ 
+
     }
     
 }
