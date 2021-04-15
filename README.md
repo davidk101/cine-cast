@@ -5,15 +5,15 @@ iOS app designed 100% programmatically(no Storyboard, SwiftUI or .xib files) to 
 API provider: https://developers.themoviedb.org/3 
 
 <p align="left">
-  <img width="150" src="home.png">
+  <img width="200" src="home.png">
 </p>
 
 <p align="center">
-  <img width="150" src="search.png">
+  <img width="200" src="search.png">
 </p>
 
 <p align="right">
-  <img width="150" src="info.png">
+  <img width="200" src="info.png">
 </p>
 
 
