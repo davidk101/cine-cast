@@ -1,6 +1,8 @@
 ## cine-cast
 
-iOS app designed 100% programmatically(no Storyboard, SwiftUI or .xib files) to display information for the cast of a movie. Data is retrieved via a GET request to the API mentioned below and then populates the appropriate ViewController with that information. 
+iOS app designed 100% programmatically(no Storyboard, SwiftUI or .xib files) to display information for the cast of a movie. Data is retrieved via a GET request to the movieDB API and then populates the appropriate ViewController with that information. 
+
+API provider: https://developers.themoviedb.org/3 
 
 <p align="left">
   <img width="150" src="home.png">
@@ -15,4 +17,3 @@ iOS app designed 100% programmatically(no Storyboard, SwiftUI or .xib files) to 
 </p>
 
 
-API provider: https://developers.themoviedb.org/3 
